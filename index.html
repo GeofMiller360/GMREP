@@ -1,29 +1,63 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Geof Miller</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #faf9f6;
-      color: #343431;
-      font-family: Georgia, serif;
-    }
-    main { padding: 40px; }
-    h1 { font-size: clamp(48px, 10vw, 88px); font-weight: normal; }
-    p { font-size: 22px; line-height: 1.6; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101113">
+<title>Geof Miller</title>
+<meta name="description" content="What I'm doing now, what I've done, and things I've made.">
+<style>
+:root{color-scheme:dark;--bg:#101113;--fg:#f0efe9;--muted:#a09e9b;--line:#343535;--accent:#d7d2c5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5}
+a{color:inherit}a:hover{color:white}.shell{max-width:1140px;margin:0 auto;padding:0 clamp(22px,5vw,72px)}
+header{height:88px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;font-weight:600;letter-spacing:-.025em}.nav{display:flex;gap:26px;align-items:center}.nav a{text-decoration:none;font-size:13px;color:var(--muted)}.nav a:hover{color:var(--fg)}
+.hero{min-height:490px;padding:98px 0 90px;display:flex;flex-direction:column;justify-content:center}
+h1{font-size:clamp(90px,16vw,195px);letter-spacing:-.095em;font-weight:400;line-height:.9;margin:0 0 46px -7px}
+.type-area{font-size:clamp(20px,3vw,30px);max-width:800px;min-height:3.5em;line-height:1.35;letter-spacing:-.025em;color:#dedcd5}
+.cursor{display:inline-block;width:2px;height:1em;background:#dcdad2;vertical-align:-.16em;margin-left:4px;animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+section{border-top:1px solid var(--line);padding:60px 0 76px}
+.section-head{font-size:12px;letter-spacing:.11em;color:var(--muted);text-transform:uppercase;margin:0 0 34px}
+h2{font-size:clamp(31px,4.5vw,56px);font-weight:400;line-height:1.15;letter-spacing:-.055em;margin:0 0 20px}
+p{margin:0;color:var(--muted);max-width:700px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.entries{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.entry{border:1px solid var(--line);border-radius:2px;padding:22px 23px;min-height:126px;display:flex;flex-direction:column;justify-content:space-between}
+.entry h3{font-size:20px;font-weight:400;margin:0;letter-spacing:-.035em}.entry span{font-size:12px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:10px;margin-top:34px}
+.frame{background:linear-gradient(135deg,#313335,#202225);aspect-ratio:4/3;display:flex;align-items:end;padding:14px;color:#9a9c9b;font-size:12px}
+.frame:nth-child(2){background:linear-gradient(135deg,#3a3936,#262726)}.frame:nth-child(3){background:linear-gradient(135deg,#293332,#202322)}
+.family{padding:28px;border:1px solid var(--line);display:flex;gap:20px;align-items:start;justify-content:space-between}
+.family h3{margin:0 0 9px;font-size:23px;font-weight:400;letter-spacing:-.03em}
+.family p{font-size:14px}.note{font-size:12px;color:var(--muted);margin-top:18px}
+.pill{white-space:nowrap;font-size:12px;color:#c6c3bd;border:1px solid #474847;padding:8px 11px;border-radius:40px}
+footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:32px 0 48px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+@media(max-width:700px){header{height:auto;min-height:76px;gap:20px;align-items:flex-start;padding:24px 0}.nav{flex-wrap:wrap;justify-content:flex-end;gap:10px 16px}.hero{min-height:380px;padding:74px 0 60px}section{padding:48px 0 58px}.two,.entries{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.frame:last-child{display:none}.family{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor{animation:none}}
+</style>
 </head>
 <body>
-  <main>
-    <p>Geof Miller</p>
-    <h1>Hello world.</h1>
-    <p>A new home for words, stories, and things worth keeping.</p>
-  </main>
-</body>
-</html>
+<div class="shell">
+<header><a class="brand" href="#home">Geof Miller</a><nav class="nav" aria-label="Main navigation"><a href="#now">Now</a><a href="#work">What I've done</a><a href="#archive">Creative archive</a><a href="#family">Family</a></nav></header>
+<main>
+<div class="hero" id="home"><h1>Hi</h1><div class="type-area"><span id="typed">Parkinson's is not a death sentence.</span><span class="cursor" aria-hidden="true"></span></div></div>
+<section id="now"><p class="section-head">01 / Now</p><div class="two"><h2>What I'm doing now</h2><p>A place for Geof's current work, thoughts, and the things that matter to him today. Links to related material and important things will appear here as the site grows.</p></div></section>
+<section id="work"><p class="section-head">02 / Work</p><h2>What I've done</h2><p>Work, experiences, and projects Geof is proud to share.</p><div class="entries"><div class="entry"><h3>Microsoft</h3><span>Experience and selected work</span></div><div class="entry"><h3>Screenwriting</h3><span>Stories and screenplays</span></div><div class="entry"><h3>Résumé</h3><span>Career history</span></div><div class="entry"><h3>Things I'm proud of</h3><span>Selected projects</span></div></div></section>
+<section id="archive"><p class="section-head">03 / Archive</p><h2>Creative archive</h2><p>Photographs, writing, recipes, and other things worth sharing and preserving.</p><div class="gallery" aria-label="Gallery placeholders"><div class="frame">Photographs</div><div class="frame">Writing</div><div class="frame">Recipes and other material</div></div><p class="note">Collection previews — content to be added with Geof.</p></section>
+<section id="family"><p class="section-head">04 / Private</p><h2>Family</h2><div class="family"><div><h3>A place for the people closest to me.</h3><p>Private access to photographs, writing, screenplays, Microsoft work, and important instructions and information for Rebecca.</p><p class="note">Family sign-in with individual access and two-factor authentication is planned. No private content is published here.</p></div><span class="pill">Coming soon</span></div></section>
+</main>
+<footer><span>© Geof Miller</span><span>Made to be kept.</span></footer></div>
+<script>
+(()=>{const el=document.getElementById('typed');if(!el)return;
+const first="Parkinson’s disease is a progressive neurological condition that affects the brain’s ability to control movement. It develops as nerve cells responsible for producing dopamine, a chemical essential for smooth and coordinated movement, become damaged or die.";
+const final="Parkinson's is not a death sentence.";
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=final;return;}
+let i=0,mode='write1';el.textContent='';
+function tick(){if(mode==='write1'){el.textContent=first.slice(0,++i);if(i>=first.length){mode='pause';setTimeout(tick,1800)}else setTimeout(tick,18);return}
+if(mode==='pause'){mode='delete';setTimeout(tick,60);return}
+if(mode==='delete'){el.textContent=first.slice(0,--i);if(i<=0){mode='write2';i=0;setTimeout(tick,450)}else setTimeout(tick,6);return}
+if(mode==='write2'){el.textContent=final.slice(0,++i);if(i<final.length)setTimeout(tick,65)}}
+setTimeout(tick,500);
+})();
+</script>
+</body></html>
