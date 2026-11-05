@@ -14,6 +14,8 @@ header{height:88px;display:flex;justify-content:space-between;align-items:center
 .hero{min-height:490px;padding:98px 0 90px;display:flex;flex-direction:column;justify-content:center}
 h1{font-size:clamp(90px,16vw,195px);letter-spacing:-.095em;font-weight:400;line-height:.9;margin:0 0 46px -7px}
 .type-area{font-size:clamp(20px,3vw,30px);max-width:800px;min-height:3.5em;line-height:1.35;letter-spacing:-.025em;color:#dedcd5}
+#typed{display:inline-block;animation:fade-in-out 6s ease-in-out infinite}
+@keyframes fade-in-out{0%,100%{opacity:0}20%,80%{opacity:1}}
 .cursor{display:inline-block;width:2px;height:1em;background:#dcdad2;vertical-align:-.16em;margin-left:4px;animation:blink 1.05s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 section{border-top:1px solid var(--line);padding:60px 0 76px}
@@ -33,7 +35,7 @@ p{margin:0;color:var(--muted);max-width:700px}
 .pill{white-space:nowrap;font-size:12px;color:#c6c3bd;border:1px solid #474847;padding:8px 11px;border-radius:40px}
 footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:32px 0 48px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 @media(max-width:700px){header{height:auto;min-height:76px;gap:20px;align-items:flex-start;padding:24px 0}.nav{flex-wrap:wrap;justify-content:flex-end;gap:10px 16px}.hero{min-height:380px;padding:74px 0 60px}section{padding:48px 0 58px}.two,.entries{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.frame:last-child{display:none}.family{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor{animation:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor{animation:none}#typed{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -47,17 +49,4 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:20px;pa
 <section id="family"><p class="section-head">04 / Private</p><h2>Family</h2><div class="family"><div><h3>A place for the people closest to me.</h3><p>Private access to photographs, writing, screenplays, Microsoft work, and important instructions and information for Rebecca.</p><p class="note">Family sign-in with individual access and two-factor authentication is planned. No private content is published here.</p></div><span class="pill">Coming soon</span></div></section>
 </main>
 <footer><span>© Geof Miller</span><span>Made to be kept.</span></footer></div>
-<script>
-(()=>{const el=document.getElementById('typed');if(!el)return;
-const first="Parkinson’s disease is a progressive neurological condition that affects the brain’s ability to control movement. It develops as nerve cells responsible for producing dopamine, a chemical essential for smooth and coordinated movement, become damaged or die.";
-const final="Parkinson's is not a death sentence.";
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=final;return;}
-let i=0,mode='write1';el.textContent='';
-function tick(){if(mode==='write1'){el.textContent=first.slice(0,++i);if(i>=first.length){mode='pause';setTimeout(tick,1800)}else setTimeout(tick,18);return}
-if(mode==='pause'){mode='delete';setTimeout(tick,60);return}
-if(mode==='delete'){el.textContent=first.slice(0,--i);if(i<=0){mode='write2';i=0;setTimeout(tick,450)}else setTimeout(tick,6);return}
-if(mode==='write2'){el.textContent=final.slice(0,++i);if(i<final.length)setTimeout(tick,65)}}
-setTimeout(tick,500);
-})();
-</script>
 </body></html>
